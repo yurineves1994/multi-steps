@@ -11,6 +11,7 @@ Além disso, o Multisteps Project utiliza tecnologias modernas, como Java, Sprin
 ## Como Executar o Backend 
 1. Clone este repositório: `git clone https://github.com/yurineves1994/multi-steps.git`
 2. Navegue até o diretório do projeto: `cd multisteps-project`
+2. Acesse a paste Backend: `cd backend`
 3. Execute o aplicativo: `./mvnw spring-boot:run`
 
 ## Configuração do Banco de Dados (MySQL) com Docker
@@ -19,6 +20,21 @@ Além disso, o Multisteps Project utiliza tecnologias modernas, como Java, Sprin
     ```bash
     docker run -d -p 3000:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -v ./algumapasta/dadosmysql:/var/lib/mysql mysql:5.7
 escolha uma pasta no seu computador para guardar as informações do banco de dados localmente.
+
+## Configuração do Frontend (React)
+1. **Navegue até o diretório do frontend:**
+   ```bash
+   cd multisteps-project/frontend
+   
+2. **Instale as dependências:**
+    ```bash
+    npm install
+    
+3. **Inicie o aplicativo React:**
+    ```bash
+    npm dev
+    
+O aplicativo estará disponível em http://localhost:5173.
 
 ## **Etapas Front-end📋**
 1 - Tela Inicial
