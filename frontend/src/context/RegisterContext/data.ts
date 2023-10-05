@@ -4,7 +4,6 @@ export const data = {
   adress: '',
   period: '',
   plan: {
-    period: false,
     price: 0,
     type: '',
   },

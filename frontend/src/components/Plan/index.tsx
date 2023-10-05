@@ -6,6 +6,7 @@ import { FormEvent, useContext, useReducer } from 'react';
 import { RegisterContext } from '~/context/RegisterContext/context';
 
 import { savePlan } from '~/context/RegisterContext/actions';
+import { Box } from '../Box';
 
 export type ReducerActions = {
   type: 'ARCADE' | 'ADVANCED' | 'PRO' | 'PERIOD';
@@ -53,55 +54,40 @@ export const Plan = () => {
       <h3>You have the option of monthy or yearly billing.</h3>
       <S.Form onSubmit={handleSubmit}>
         <div className='boxes'>
-          <input
-            onClick={() => planDispatch({ type: 'ARCADE' })}
-            type='checkbox'
-            name='plan'
-            id='arcade'
+          <Box
+            onDispatch={planDispatch}
+            id={'arcade'}
+            plan={plan}
+            icon={IconArcade}
+            name={'ARCADE'}
+            price={9.0}
           />
-          <S.Box htmlFor='arcade' active={plan.type === 'arcade' ? 'true' : 'false'}>
-            <img src={IconArcade} alt={'Icon Arcade'} />
-            <div>
-              <span className='title_box'>Arcade</span>
-              <span className='price_box'>$9/mo</span>
-            </div>
-          </S.Box>
-          <input
-            onClick={() => planDispatch({ type: 'ADVANCED' })}
-            type='checkbox'
-            name='plan'
-            id='advanced'
+          <Box
+            onDispatch={planDispatch}
+            id={'advanced'}
+            plan={plan}
+            icon={IconAdvanced}
+            name={'ADVANCED'}
+            price={12.0}
           />
-          <S.Box htmlFor='advanced' active={plan.type === 'advanced' ? 'true' : 'false'}>
-            <img src={IconAdvanced} alt={'Icon Advanced'} />
-            <div>
-              <span className='title_box'>Advanced</span>
-              <span className='price_box'>$12/mo</span>
-            </div>
-          </S.Box>
-          <input
-            onClick={() => planDispatch({ type: 'PRO' })}
-            type='checkbox'
-            name='plan'
-            id='pro'
+          <Box
+            onDispatch={planDispatch}
+            id={'pro'}
+            plan={plan}
+            icon={IconPro}
+            name={'PRO'}
+            price={15.0}
           />
-          <S.Box htmlFor='pro' active={plan.type === 'pro' ? 'true' : 'false'}>
-            <img src={IconPro} alt={'Icon Pro'} />
-            <div>
-              <span className='title_box'>Pro</span>
-              <span className='price_box'>$15/mo</span>
-            </div>
-          </S.Box>
         </div>
         <div className='box-toggle'>
-          <label htmlFor='toggle'>Monthly</label>
+          <label htmlFor='period'>Monthly</label>
           <input
             onClick={() => planDispatch({ type: 'PERIOD' })}
             type='checkbox'
-            name='toggle'
-            id='toggle'
+            name='period'
+            id='period'
           />
-          <label htmlFor='toggle'>Yearly</label>
+          <label htmlFor='period'>Yearly</label>
         </div>
         <div className='button'>
           <button type='submit'>Next Step</button>

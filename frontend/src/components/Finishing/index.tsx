@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { finishRegister } from '~/context/RegisterContext/actions';
 import { RegisterContext } from '~/context/RegisterContext/context';
 import * as S from './style';
+import { useHttpPost } from '~/hooks/useFetch';
 
 type Service = {
   name: string;
@@ -13,9 +14,12 @@ type Service = {
 export const Finishing = () => {
   const { user, dispatch, changeStep } = useContext(RegisterContext);
 
+  //const { postData, loading: postLoading } = useHttpPost();
+
   const handleRegister = () => {
     finishRegister(dispatch);
     changeStep();
+    //postData('http://localhost:8080/api/pedido', user);
     console.log('ENVIANDO DADOS PARA O BACKEND!', user);
   };
   return (
