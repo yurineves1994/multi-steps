@@ -22,19 +22,19 @@ escolha uma pasta no seu computador para guardar as informações do banco de da
 
 ## **Etapas Front-end📋**
 1 - Tela Inicial
-![image](src/assets/step-01.png)
+![image](./telas/step-01.png)
 
 2 - Tela de escolha de plano
-![image](src/assets/step-02.png)
+![image](./telas/step-02.png)
 
 3 - Tela para personalizar adicionais ao plano
-![image](src/assets/step-03.png)
+![image](./telas/step-03.png)
 
 4 - Tela de Resumo
-![image](src/assets/step-04.png)
+![image](./telas/step-04.png)
 
 5 - Tela de Finalização
-![image](src/assets/end.png)
+![image](./telas/end.png)
 
 ## Tecnologias Utilizadas
 
