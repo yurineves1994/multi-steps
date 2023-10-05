@@ -34,6 +34,8 @@ export const Plan = () => {
     price: 0,
     period: false,
   });
+
+  console.log(plan.type);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -57,7 +59,7 @@ export const Plan = () => {
             name='plan'
             id='arcade'
           />
-          <S.Box htmlFor='arcade'>
+          <S.Box htmlFor='arcade' active={plan.type === 'arcade' ? 'true' : 'false'}>
             <img src={IconArcade} alt={'Icon Arcade'} />
             <div>
               <span className='title_box'>Arcade</span>
@@ -70,7 +72,7 @@ export const Plan = () => {
             name='plan'
             id='advanced'
           />
-          <S.Box htmlFor='advanced'>
+          <S.Box htmlFor='advanced' active={plan.type === 'advanced' ? 'true' : 'false'}>
             <img src={IconAdvanced} alt={'Icon Advanced'} />
             <div>
               <span className='title_box'>Advanced</span>
@@ -83,7 +85,7 @@ export const Plan = () => {
             name='plan'
             id='pro'
           />
-          <S.Box htmlFor='pro'>
+          <S.Box htmlFor='pro' active={plan.type === 'pro' ? 'true' : 'false'}>
             <img src={IconPro} alt={'Icon Pro'} />
             <div>
               <span className='title_box'>Pro</span>

@@ -9,25 +9,50 @@ export type ReducerActions = {
   payload: any;
 };
 
-const targetAdditions = (state: any, action: ReducerActions) => {
+type Service = {
+  name: string;
+  contratado: boolean;
+  price: number;
+};
+
+type State = {
+  onlineService: Service;
+  largeStorage: Service;
+  customizable: Service;
+  services: Service[];
+};
+
+const targetAdditions = (state: State, action: ReducerActions) => {
   switch (action.type) {
     case 'ONLINE_SERVICE':
       return {
         ...state,
-        onlineService: { contratado: action.payload, price: 1.0 },
+        onlineService: { name: 'Online service', contratado: action.payload, price: 1.0 },
+        services:
+          action.payload === true
+            ? [...state.services, state.onlineService]
+            : state.services.filter((servico) => servico !== state.onlineService),
       };
     case 'LARGE_STORAGE':
       return {
         ...state,
-        largeStorage: { contratado: action.payload, price: 2.0 },
+        largeStorage: { name: 'Large Storage', contratado: action.payload, price: 2.0 },
+        services:
+          action.payload === true
+            ? [...state.services, state.largeStorage]
+            : state.services.filter((servico) => servico !== state.largeStorage),
       };
     case 'CUSTOMIZABLE':
       return {
         ...state,
-        customizable: { contratado: action.payload, price: 2.0 },
+        customizable: { name: 'Customizable', contratado: action.payload, price: 2.0 },
+        services:
+          action.payload === true
+            ? [...state.services, state.customizable]
+            : state.services.filter((servico) => servico !== state.customizable),
       };
     default:
-      return { state };
+      return { ...state };
   }
 };
 
@@ -35,9 +60,10 @@ export const Additions = () => {
   const { user, dispatch, changeStep } = useContext(RegisterContext);
 
   const [additions, additionsDispatch] = useReducer(targetAdditions, {
-    onlineService: { contratado: false, price: 1.0 },
-    largeStorage: { contratado: false, price: 2.0 },
-    customizable: { contratado: false, price: 2.0 },
+    onlineService: { name: 'Online service', contratado: false, price: 1.0 },
+    largeStorage: { name: 'Large Storage', contratado: false, price: 2.0 },
+    customizable: { name: 'Customizable', contratado: false, price: 2.0 },
+    services: [],
   });
 
   const handleForm = (e: FormEvent<HTMLFormElement>) => {

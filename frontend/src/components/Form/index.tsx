@@ -9,7 +9,7 @@ export const Form = () => {
   const { dispatch, changeStep } = useContext(RegisterContext);
   const [name, setName] = useState('');
   const [adress, setAdress] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
 
   const handleForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ export const Form = () => {
     const infos = {
       name,
       adress,
-      number,
+      phone,
     };
 
     saveInfos(dispatch, infos);
@@ -47,8 +47,8 @@ export const Form = () => {
           <S.Input
             type='text'
             required
-            value={number}
-            onChange={(e) => setNumber(Mask.normalizePhoneNumber(e.target.value))}
+            value={phone}
+            onChange={(e) => setPhone(Mask.normalizePhoneNumber(e.target.value))}
           />
         </label>
         <div className='button'>

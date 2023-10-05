@@ -81,6 +81,8 @@ export const Box = styled.label`
   min-height: 150px;
   min-width: 125px;
 
+  background-color: ${(props) => (props.active == 'true' ? '#483eff' : '#fff')};
+
   @media (max-width: 414px) {
     width: 100%;
     flex-direction: row;
@@ -102,7 +104,7 @@ export const Box = styled.label`
   }
 
   .title_box {
-    color: #032958;
+    color: ${(props) => (props.active == 'true' ? '#fff' : '#032958')};
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
@@ -111,6 +113,6 @@ export const Box = styled.label`
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    color: #97989c;
+    color: ${(props) => (props.active == 'true' ? '#fff' : '#97989c')};
   }
 `;

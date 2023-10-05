@@ -1,19 +1,7 @@
 export const data = {
   name: '',
-  number: 0,
+  phone: '',
   adress: '',
-  customizable: {
-    contratado: false,
-    price: 0,
-  },
-  largeStorage: {
-    contratado: false,
-    price: 0,
-  },
-  onlineService: {
-    contratado: false,
-    price: 0,
-  },
   period: '',
   plan: {
     period: false,

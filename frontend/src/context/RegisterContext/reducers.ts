@@ -14,15 +14,15 @@ export const reducer = (state: any, action: ReducerActions) => {
     }
 
     case types.SAVE_INFOS: {
-      const { name, adress, number } = action.payload;
+      const { name, adress, phone } = action.payload;
 
-      return { ...state, name, adress, number };
+      return { ...state, name, adress, phone };
     }
 
     case types.SAVE_ADDITTIONS: {
-      const { onlineService, largeStorage, customizable } = action.payload;
+      const { services } = action.payload;
 
-      return { ...state, onlineService, largeStorage, customizable };
+      return { ...state, services };
     }
     case types.CALCULATION_VALUES: {
       const total = action.payload;

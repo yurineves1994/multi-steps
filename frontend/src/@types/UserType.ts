@@ -1,16 +1,20 @@
 export type UserType = {
   name?: string;
-  number?: number;
+  phone?: string;
   adress?: string;
+  services?: [];
   customizable?: {
+    name?: string;
     contratado?: boolean;
     price?: number;
   };
   largeStorage?: {
+    name?: string;
     contratado?: boolean;
     price?: number;
   };
   onlineService?: {
+    name?: string;
     contratado?: boolean;
     price?: number;
   };

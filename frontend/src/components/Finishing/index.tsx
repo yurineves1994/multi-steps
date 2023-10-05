@@ -4,6 +4,12 @@ import { finishRegister } from '~/context/RegisterContext/actions';
 import { RegisterContext } from '~/context/RegisterContext/context';
 import * as S from './style';
 
+type Service = {
+  name: string;
+  contratado: boolean;
+  price: number;
+};
+
 export const Finishing = () => {
   const { user, dispatch, changeStep } = useContext(RegisterContext);
 
@@ -26,24 +32,12 @@ export const Finishing = () => {
           </div>
           <span className='plan_price'>${user.plan?.price}/mo</span>
         </S.BlockPlan>
-        {user.largeStorage?.contratado && (
-          <S.OtherService>
-            <div className='other_title'>Large Storage</div>
-            <div className='other_price'>+${user.largeStorage.price}/mo</div>
+        {user.services?.map((servico: Service, index) => (
+          <S.OtherService key={index}>
+            <div className='other_title'>{servico.name}</div>
+            <div className='other_price'>+${servico.price}/mo</div>
           </S.OtherService>
-        )}
-        {user.onlineService?.contratado && (
-          <S.OtherService>
-            <div className='other_title'>Online Service</div>
-            <div className='other_price'>+${user.onlineService.price}/mo</div>
-          </S.OtherService>
-        )}
-        {user.customizable?.contratado && (
-          <S.OtherService>
-            <div className='other_title'>Customizable</div>
-            <div className='other_price'>+${user.customizable.price}/mo</div>
-          </S.OtherService>
-        )}
+        ))}
       </S.Finishing>
       <S.Total>
         <span className='total_title'>Total (per month)</span>
