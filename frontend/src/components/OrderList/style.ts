@@ -7,6 +7,7 @@ export const OrderListContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
+  border-radius: 20px;
 
   @media (max-width: 414px) {
     width: 100%;
@@ -29,7 +30,6 @@ export const OrdersContent = styled.div`
 
   h1 {
     text-align: center;
-
   }
 `;
 
