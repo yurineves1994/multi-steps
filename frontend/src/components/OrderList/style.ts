@@ -21,6 +21,11 @@ export const OrderListContainer = styled.div`
 export const OrdersContent = styled.div`
   height: 90vh;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
 
   h1 {
     text-align: center;
@@ -31,7 +36,6 @@ export const OrdersContent = styled.div`
 export const OrderTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
   background-color: #fff;
   overflow: hidden;
 `;
@@ -44,4 +48,11 @@ export const TableHeader = styled.thead`
 export const TableHeaderCell = styled.th`
   padding: 15px;
   text-align: center;
+`;
+
+export const SearchInput = styled.input`
+  padding: 10px;
+  width: 20%;
+  box-sizing: border-box;
+  border: 1px solid #032958;
 `;

@@ -1,5 +1,5 @@
 // pages/OrderList.js
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './style';
 import {OrderItem} from "~/components/OrderItem"
 
@@ -51,10 +51,21 @@ const ordersData = [
 ]
 
 export const OrderList = () => {
+	const [searchTerm, setSearchTerm] = useState<string>('');
+  const filteredOrders = ordersData.filter((order) =>
+    order.nome.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <S.OrderListContainer>
       <S.OrdersContent>
         <h1>Listagem de Pedidos</h1>
+				<S.SearchInput
+          type="text"
+          placeholder="Pesquisar por nome do cliente"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
         <S.OrderTable>
           <S.TableHeader>
             <tr>
@@ -67,7 +78,7 @@ export const OrderList = () => {
             </tr>
           </S.TableHeader>
           <tbody>
-            {ordersData.map((order) => (
+            {filteredOrders.map((order) => (
               <OrderItem key={order.id} order={order} />
             ))}
           </tbody>
