@@ -52,6 +52,9 @@ O aplicativo estará disponível em http://localhost:5173.
 5 - Tela de Finalização
 ![image](./telas/end.png)
 
+5 - Painel Administrador
+![image](./telas/tela-admin.png)
+
 ## Tecnologias Utilizadas
 
 ### Backend (Java/Spring Boot)
@@ -68,6 +71,7 @@ Certifique-se de ter o Java e [Maven](https://maven.apache.org/) instalados em s
 
 ### Frontend (React)
 - [React.js](https://reactjs.org/) - Biblioteca JavaScript para construção de interfaces de usuário.
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start) - Roteamento para aplicativos React.
 - [Axios](https://axios-http.com/) - Cliente HTTP para fazer requisições HTTP.
 
 ## Contribuição
