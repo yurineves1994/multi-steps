@@ -39,13 +39,9 @@ export const Container = styled.div`
 
     &::after {
       content: '';
-      /* position: absolute; */
       top: 0;
       left: 0;
       background-image: url(${bgSidebarMobile});
-      /* background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover; */
       border-radius: 0;
       height: 300px;
       width: 100%;
@@ -64,8 +60,6 @@ export const Content = styled.div`
 export const SideBar = styled.div`
   height: 590px;
   position: absolute;
-  /* top: 50%;
-    transform: translateY(-50%); */
   left: 10px;
   z-index: 9999;
 

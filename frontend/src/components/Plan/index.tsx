@@ -6,7 +6,7 @@ import { FormEvent, useContext, useReducer } from 'react';
 import { RegisterContext } from '~/context/RegisterContext/context';
 
 import { savePlan } from '~/context/RegisterContext/actions';
-import { Box } from '../Box';
+import { BoxPlan as Box } from '../BoxPlan';
 
 export type ReducerActions = {
   type: 'ARCADE' | 'ADVANCED' | 'PRO' | 'PERIOD';

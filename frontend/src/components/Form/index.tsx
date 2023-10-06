@@ -34,7 +34,7 @@ export const Form = () => {
           <S.Input type='text' required value={name} onChange={(e) => setName(e.target.value)} />
         </label>
         <label>
-          Adress
+          Address
           <S.Input
             type='text'
             required
@@ -43,7 +43,7 @@ export const Form = () => {
           />
         </label>
         <label>
-          Number
+          Phone
           <S.Input
             type='text'
             required

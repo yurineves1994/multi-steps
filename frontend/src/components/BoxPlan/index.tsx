@@ -9,7 +9,7 @@ type Box = {
   price: number;
 };
 
-export const Box = ({ onDispatch, id, plan, icon, name, price }: Box) => {
+export const BoxPlan = ({ onDispatch, id, plan, icon, name, price }: Box) => {
   return (
     <>
       <input onClick={() => onDispatch({ type: name })} type='checkbox' name='plan' id={id} />

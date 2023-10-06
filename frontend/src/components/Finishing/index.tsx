@@ -7,20 +7,18 @@ import { useHttpPost } from '~/hooks/useFetch';
 
 type Service = {
   name: string;
-  contratado: boolean;
   price: number;
 };
 
 export const Finishing = () => {
   const { user, dispatch, changeStep } = useContext(RegisterContext);
 
-  //const { postData, loading: postLoading } = useHttpPost();
+  const { postData, loading: postLoading } = useHttpPost();
 
   const handleRegister = () => {
     finishRegister(dispatch);
     changeStep();
-    //postData('http://localhost:8080/api/pedido', user);
-    console.log('ENVIANDO DADOS PARA O BACKEND!', user);
+    postData('http://localhost:8080/api/pedido', user);
   };
   return (
     <div className='container'>

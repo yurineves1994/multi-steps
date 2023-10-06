@@ -8,9 +8,11 @@ export type ReducerActions = {
 export const reducer = (state: any, action: ReducerActions) => {
   switch (action.type) {
     case types.SAVE_PLAN: {
-      const { plan, period } = action.payload;
-
-      return { ...state, plan, period };
+      const {
+        plan: { price, type },
+        period,
+      } = action.payload;
+      return { ...state, plan: { price, type }, period };
     }
 
     case types.SAVE_INFOS: {
@@ -20,7 +22,12 @@ export const reducer = (state: any, action: ReducerActions) => {
     }
 
     case types.SAVE_ADDITTIONS: {
-      const { services } = action.payload;
+      let { services } = action.payload;
+
+      services = services.map(item => {
+        const { contratado, ...rest } = item;
+        return rest;
+      });
 
       return { ...state, services };
     }
