@@ -13,8 +13,6 @@ export const OrderContent = styled.div`
   margin: 0 auto;
 `;
 
-
-
 export const OrderTableRow = styled.tr`
   &:nth-child(even) {
     background-color: #f2f2f2;

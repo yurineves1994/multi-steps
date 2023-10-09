@@ -1,4 +1,3 @@
-
 import * as S from './style';
 
 interface Order {
@@ -22,7 +21,6 @@ interface OrderTableRowProps {
 }
 
 export const OrderItem = ({ order }: OrderTableRowProps) => {
-
   return (
     <S.OrderTableRow>
       <S.OrderTableData>{order.nome}</S.OrderTableData>

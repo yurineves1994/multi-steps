@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { FormEvent, useContext, useState } from 'react';
 import { saveInfos } from '~/context/RegisterContext/actions';
 import { RegisterContext } from '~/context/RegisterContext/context';

@@ -24,7 +24,7 @@ export const reducer = (state: any, action: ReducerActions) => {
     case types.SAVE_ADDITTIONS: {
       let { services } = action.payload;
 
-      services = services.map(item => {
+      services = services.map((item) => {
         const { contratado, ...rest } = item;
         return rest;
       });

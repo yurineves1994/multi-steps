@@ -17,9 +17,18 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import", "jsx-a11y", "react-hooks", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "react-hooks",
+    "prettier"
+  ],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/prop-types": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
@@ -29,10 +38,8 @@
         "caughtErrorsIgnorePattern": "^_"
       }
     ],
-
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-
     "prettier/prettier": [
       "warn",
       {

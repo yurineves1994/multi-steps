@@ -1,4 +1,3 @@
-// import { RegisterContext } from '../../context/RegisterContext';
 import { useContext } from 'react';
 import { finishRegister } from '~/context/RegisterContext/actions';
 import { RegisterContext } from '~/context/RegisterContext/context';
@@ -13,7 +12,7 @@ type Service = {
 export const Finishing = () => {
   const { user, dispatch, changeStep } = useContext(RegisterContext);
 
-  const { postData, loading: postLoading } = useHttpPost();
+  const { postData } = useHttpPost();
 
   const handleRegister = () => {
     finishRegister(dispatch);

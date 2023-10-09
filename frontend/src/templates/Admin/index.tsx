@@ -1,5 +1,5 @@
-import { OrderList } from "~/components/OrderList"
+import { OrderList } from '~/components/OrderList';
 
 export const Admin = () => {
-  return (<OrderList />);
-}
+  return <OrderList />;
+};
