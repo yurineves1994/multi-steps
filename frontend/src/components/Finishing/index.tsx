@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { finishRegister } from '~/context/RegisterContext/actions';
 import { RegisterContext } from '~/context/RegisterContext/context';
-import * as S from './style';
 import { useHttpPost } from '~/hooks/useFetch';
+import * as S from './style';
 
 type Service = {
   name: string;

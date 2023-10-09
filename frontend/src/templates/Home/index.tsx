@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 import * as S from './style';
 // components
-import { Plan } from '../../components/Plan';
 import { Additions } from '../../components/Additions';
-import { Finishing } from '../../components/Finishing';
 import { Finished } from '../../components/Finished';
+import { Finishing } from '../../components/Finishing';
 import { Form } from '../../components/Form';
 import { List } from '../../components/List';
+import { Plan } from '../../components/Plan';
 
 import { useContext } from 'react';
 import { RegisterContext } from '~/context/RegisterContext/context';

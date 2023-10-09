@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface AuthHook {
   token: string | null;
   loading: boolean;
   error: string | null;
-  login: (username: string, password: string) => Promise<void>;
+  login: (login: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -12,18 +13,19 @@ export const useAuth = (): AuthHook => {
   const [token, setToken] = useState<string | null>(sessionStorage.getItem('token') || null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-  const login = async (username: string, password: string): Promise<void> => {
+  const login = async (login: string, password: string): Promise<void> => {
     setLoading(true);
 
     try {
       // Substitua a URL abaixo pela sua API de autenticação
-      const response = await fetch('SUA_URL_DE_LOGIN', {
+      const response = await fetch('http://localhost:8080/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ login, password }),
       });
 
       if (!response.ok) {
@@ -35,6 +37,8 @@ export const useAuth = (): AuthHook => {
 
       setToken(newToken);
       sessionStorage.setItem('token', newToken);
+
+      navigate('/admin', { replace: true });
     } catch (error: Error | any) {
       setError(error.message);
     } finally {

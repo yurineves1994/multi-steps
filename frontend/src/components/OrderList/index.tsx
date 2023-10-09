@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import * as S from './style';
 import { OrderItem } from '~/components/OrderItem';
-import { useHttpGet } from '~/hooks/useFetch';
+import { useAuth } from '~/hooks/useAuth';
+import { useHttpGetWithAuth } from '~/hooks/useFetch';
+import * as S from './style';
 
 export const OrderList = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const { token } = useAuth();
 
-  const { data: orders, loading, refetch } = useHttpGet('http://localhost:8080/api/pedido');
+  const { data: orders } = useHttpGetWithAuth('http://localhost:8080/api/pedido', token);
 
   const filteredOrders = orders.filter((order) =>
     order.nome.toLowerCase().includes(searchTerm.toLowerCase()),

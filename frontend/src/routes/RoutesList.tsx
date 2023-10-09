@@ -1,9 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-
-import { Home } from '../templates/Home';
-import { Admin } from '../templates/Admin';
-import { Login } from '~/templates/Login';
 import { useAuth } from '~/hooks/useAuth';
+import { Login } from '~/templates/Login';
+import { Admin } from '../templates/Admin';
+import { Home } from '../templates/Home';
 
 interface PrivateRouteProps {
   element: React.ReactNode;
