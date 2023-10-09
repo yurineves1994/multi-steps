@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import multisteps.entities.Pedido;
-import multisteps.entities.Plan;
-import multisteps.entities.Services;
-import multisteps.entities.DTOs.PedidoDTO;
-import multisteps.entities.DTOs.PlanDTO;
-import multisteps.entities.DTOs.ServicesDTO;
+import multisteps.entities.dtos.PedidoDTO;
+import multisteps.entities.dtos.PlanDTO;
+import multisteps.entities.dtos.ServicesDTO;
+import multisteps.entities.pedidos.Pedido;
+import multisteps.entities.plan.Plan;
+import multisteps.entities.services.Services;
 import multisteps.services.PedidoService;
 
 @RestController
