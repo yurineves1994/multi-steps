@@ -49,4 +49,8 @@ public class Plan {
     this.price = price;
   }
 
+  @Override
+  public String toString() {
+    return type.toUpperCase();
+  }
 }

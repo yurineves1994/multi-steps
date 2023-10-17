@@ -34,4 +34,5 @@ public class Services {
   public void setPrice(Double price) {
     this.price = price;
   }
+
 }

@@ -31,7 +31,7 @@ public class PedidoController {
   public Pedido createProduto(@RequestBody PedidoDTO pedidoDTO) {
     Pedido pedido = new Pedido();
     pedido.setNome(pedidoDTO.getName());
-    pedido.setAdress(pedidoDTO.getAdress());
+    pedido.setEmail(pedidoDTO.getEmail());
     pedido.setPhone(pedidoDTO.getPhone());
 
     PlanDTO planDTO = pedidoDTO.getPlan();

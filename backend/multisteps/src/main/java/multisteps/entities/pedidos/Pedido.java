@@ -23,7 +23,7 @@ public class Pedido {
   private Long id;
 
   private String nome;
-  private String adress;
+  private String email;
   private String phone;
 
   @OneToOne(cascade = CascadeType.PERSIST)
@@ -37,9 +37,9 @@ public class Pedido {
   public Pedido() {
   }
 
-  public Pedido(String nome, String adress, String phone, Plan plan, List<Services> services) {
+  public Pedido(String nome, String email, String phone, Plan plan, List<Services> services) {
     this.nome = nome;
-    this.adress = adress;
+    this.email = email;
     this.phone = phone;
     this.plan = plan;
     this.services = services;
@@ -61,12 +61,12 @@ public class Pedido {
     this.nome = nome;
   }
 
-  public String getAdress() {
-    return adress;
+  public String getEmail() {
+    return email;
   }
 
-  public void setAdress(String adress) {
-    this.adress = adress;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public String getPhone() {
@@ -108,4 +108,18 @@ public class Pedido {
       this.total += plan.getPrice();
     }
   }
+
+  public String servicesToString() {
+    StringBuilder servicesString = new StringBuilder();
+
+    for (Services service : this.services) {
+        servicesString.append(service.getName().toUpperCase()).append(", ");
+    }
+
+    if (!services.isEmpty()) {
+        servicesString.delete(servicesString.length() - 2, servicesString.length());
+    }
+
+    return servicesString.toString();
+}
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PedidoDTO {
   private String name;
-  private String adress;
+  private String email;
   private String phone;
   private String period;
   private PlanDTO plan;
@@ -20,12 +20,12 @@ public class PedidoDTO {
     this.name = name;
   }
 
-  public String getAdress() {
-    return adress;
+  public String getEmail() {
+    return email;
   }
 
-  public void setAdress(String adress) {
-    this.adress = adress;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public String getPhone() {
