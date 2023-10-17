@@ -17,6 +17,7 @@ export const Finishing = () => {
   const handleRegister = () => {
     finishRegister(dispatch);
     changeStep();
+    console.log(user);
     postData('http://localhost:8080/api/pedido', user);
   };
   return (

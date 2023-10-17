@@ -7,7 +7,7 @@ import * as S from './style';
 export const Form = () => {
   const { dispatch, changeStep } = useContext(RegisterContext);
   const [name, setName] = useState('');
-  const [adress, setAdress] = useState('');
+  const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
   const handleForm = (e: FormEvent<HTMLFormElement>) => {
@@ -15,7 +15,7 @@ export const Form = () => {
 
     const infos = {
       name,
-      adress,
+      email,
       phone,
     };
 
@@ -33,13 +33,8 @@ export const Form = () => {
           <S.Input type='text' required value={name} onChange={(e) => setName(e.target.value)} />
         </label>
         <label>
-          Address
-          <S.Input
-            type='text'
-            required
-            value={adress}
-            onChange={(e) => setAdress(e.target.value)}
-          />
+          Email
+          <S.Input type='text' required value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
         <label>
           Phone

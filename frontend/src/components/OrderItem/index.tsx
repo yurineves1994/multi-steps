@@ -3,7 +3,7 @@ import * as S from './style';
 interface Order {
   id: number;
   nome: string;
-  adress: string;
+  email: string;
   phone: string;
   plan: {
     type: string;
@@ -24,7 +24,7 @@ export const OrderItem = ({ order }: OrderTableRowProps) => {
   return (
     <S.OrderTableRow>
       <S.OrderTableData>{order.nome}</S.OrderTableData>
-      <S.OrderTableData>{order.adress}</S.OrderTableData>
+      <S.OrderTableData>{order.email}</S.OrderTableData>
       <S.OrderTableData>{order.phone}</S.OrderTableData>
       <S.OrderTableData>{order.plan.type}</S.OrderTableData>
       <S.OrderTableData>

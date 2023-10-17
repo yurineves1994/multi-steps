@@ -1,7 +1,7 @@
 export type UserType = {
   name?: string;
   phone?: string;
-  adress?: string;
+  email?: string;
   services?: [];
   customizable?: {
     name?: string;

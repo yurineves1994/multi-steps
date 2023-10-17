@@ -1,7 +1,7 @@
 export const data = {
   name: '',
   phone: '',
-  adress: '',
+  email: '',
   period: '',
   plan: {
     price: 0,

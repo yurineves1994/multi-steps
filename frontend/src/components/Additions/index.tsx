@@ -90,8 +90,7 @@ export const Additions = () => {
 
   return (
     <div className='container'>
-      <h2>Personal info</h2>
-      <h3>Please provide your name, email address, and phone number.</h3>
+      <h2>Additions info</h2>
       <S.Form onSubmit={handleForm}>
         <label>
           <div className='infos_add'>

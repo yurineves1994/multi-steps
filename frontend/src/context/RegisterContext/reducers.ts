@@ -16,9 +16,9 @@ export const reducer = (state: any, action: ReducerActions) => {
     }
 
     case types.SAVE_INFOS: {
-      const { name, adress, phone } = action.payload;
+      const { name, email, phone } = action.payload;
 
-      return { ...state, name, adress, phone };
+      return { ...state, name, email, phone };
     }
 
     case types.SAVE_ADDITTIONS: {
